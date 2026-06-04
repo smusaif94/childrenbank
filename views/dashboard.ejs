@@ -1,0 +1,22 @@
+<%- include('layouts/header') %>
+<h1 class="h3 mb-4">Dashboard</h1>
+<div class="row g-3 mb-4">
+  <div class="col-md-3"><div class="card shadow-sm h-100"><div class="card-body"><div class="text-muted">Child</div><div class="fw-bold"><%= data.childName %></div></div></div></div>
+  <div class="col-md-3"><div class="card shadow-sm h-100"><div class="card-body"><div class="text-muted">Account</div><div class="fw-bold"><%= data.accountNumber %></div></div></div></div>
+  <div class="col-md-3"><div class="card shadow-sm h-100"><div class="card-body"><div class="text-muted">Balance</div><div class="fw-bold text-success">$<%= data.balance.toFixed(2) %></div></div></div></div>
+  <div class="col-md-3"><div class="card shadow-sm h-100"><div class="card-body"><div class="text-muted">Rewards Level</div><div class="fw-bold text-warning"><%= data.rewardsLevel %></div></div></div></div>
+</div>
+<div class="card shadow-sm">
+  <div class="card-header bg-white fw-semibold">Savings Goals Progress</div>
+  <ul class="list-group list-group-flush">
+    <% data.savingsGoals.forEach((goal) => { const progress = Math.round((goal.saved / goal.target) * 100); %>
+      <li class="list-group-item">
+        <div class="d-flex justify-content-between"><span><%= goal.name %></span><span>$<%= goal.saved %> / $<%= goal.target %></span></div>
+        <div class="progress mt-2" role="progressbar" aria-valuenow="<%= progress %>" aria-valuemin="0" aria-valuemax="100">
+          <div class="progress-bar" style="width: <%= progress %>%"><%= progress %>%</div>
+        </div>
+      </li>
+    <% }) %>
+  </ul>
+</div>
+<%- include('layouts/footer') %>

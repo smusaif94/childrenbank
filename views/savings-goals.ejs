@@ -1,0 +1,20 @@
+<%- include('layouts/header') %>
+<h1 class="h3 mb-4">Savings Goals</h1>
+<div class="row g-3">
+  <% data.savingsGoals.forEach((goal) => { const progress = Math.round((goal.saved / goal.target) * 100); %>
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-body">
+          <h5 class="card-title"><%= goal.name %></h5>
+          <p class="mb-1">Target: <strong>$<%= goal.target %></strong></p>
+          <p class="mb-1">Saved: <strong>$<%= goal.saved %></strong></p>
+          <p class="text-muted small">Due: <%= goal.dueDate %></p>
+          <div class="progress" role="progressbar" aria-valuenow="<%= progress %>" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar bg-success" style="width: <%= progress %>%"><%= progress %>%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>
+<%- include('layouts/footer') %>

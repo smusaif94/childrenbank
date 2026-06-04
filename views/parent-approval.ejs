@@ -1,0 +1,30 @@
+<%- include('layouts/header') %>
+<h1 class="h3 mb-4">Parent Approval</h1>
+<div class="card shadow-sm">
+  <div class="card-body">
+    <p class="text-muted">These requests are waiting for parent review.</p>
+    <% if (data.pendingApprovals.length === 0) { %>
+      <div class="alert alert-success mb-0">No pending approvals.</div>
+    <% } else { %>
+      <div class="table-responsive">
+        <table class="table align-middle">
+          <thead>
+            <tr><th>Request ID</th><th>Type</th><th>Amount</th><th>Requested On</th><th>Note</th></tr>
+          </thead>
+          <tbody>
+            <% data.pendingApprovals.forEach((item) => { %>
+              <tr>
+                <td><%= item.requestId %></td>
+                <td><%= item.requestType %></td>
+                <td>$<%= item.amount.toFixed(2) %></td>
+                <td><%= item.requestedOn %></td>
+                <td><%= item.note %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    <% } %>
+  </div>
+</div>
+<%- include('layouts/footer') %>

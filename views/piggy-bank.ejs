@@ -1,0 +1,8 @@
+<%- include('layouts/header') %>
+<h1 class="h3 mb-4">Piggy Bank</h1>
+<div class="row g-3">
+  <div class="col-md-4"><div class="card shadow-sm"><div class="card-body"><h5>Coins Saved</h5><p class="display-6 mb-0"><%= data.piggyBank.coins %></p></div></div></div>
+  <div class="col-md-4"><div class="card shadow-sm"><div class="card-body"><h5>Notes Saved</h5><p class="display-6 mb-0"><%= data.piggyBank.notes %></p></div></div></div>
+  <div class="col-md-4"><div class="card shadow-sm"><div class="card-body"><h5>Weekly Average</h5><p class="display-6 mb-0">$<%= data.piggyBank.weeklyAverage %></p></div></div></div>
+</div>
+<%- include('layouts/footer') %>

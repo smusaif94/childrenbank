@@ -1,0 +1,18 @@
+<%- include('layouts/header') %>
+<div class="p-5 mb-4 bg-white rounded-3 shadow-sm">
+  <h1 class="display-6 fw-bold">Welcome to Children Bank</h1>
+  <p class="lead">A fun and modern way for children to learn saving, spending, and money goals.</p>
+  <a href="/dashboard" class="btn btn-primary btn-lg">View Dashboard</a>
+</div>
+<div class="row g-3">
+  <div class="col-md-4">
+    <div class="card h-100"><div class="card-body"><h5>Balance</h5><p class="fs-4 text-success mb-0">$<%= data.balance.toFixed(2) %></p></div></div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100"><div class="card-body"><h5>Rewards</h5><p class="fs-4 text-warning mb-0"><%= data.rewardPoints %> pts</p></div></div>
+  </div>
+  <div class="col-md-4">
+    <div class="card h-100"><div class="card-body"><h5>Monthly Deposit</h5><p class="fs-4 text-primary mb-0">$<%= data.monthlyDeposit.toFixed(2) %></p></div></div>
+  </div>
+</div>
+<%- include('layouts/footer') %>
