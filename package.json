@@ -1,0 +1,22 @@
+{
+  "name": "children-bank",
+  "version": "1.0.0",
+  "description": "Modern banking web app for children built with Node.js, Express, EJS, and Bootstrap 5",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "ejs",
+    "bootstrap",
+    "banking"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  }
+}

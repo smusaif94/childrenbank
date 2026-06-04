@@ -1,0 +1,23 @@
+<%- include('layouts/header') %>
+<h1 class="h3 mb-4">Transactions</h1>
+<div class="card shadow-sm">
+  <div class="table-responsive">
+    <table class="table mb-0 align-middle">
+      <thead class="table-light">
+        <tr><th>Date</th><th>Type</th><th>Description</th><th class="text-end">Amount</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <% data.transactions.forEach((txn) => { %>
+          <tr>
+            <td><%= txn.date %></td>
+            <td><%= txn.type %></td>
+            <td><%= txn.description %></td>
+            <td class="text-end <%= txn.amount < 0 ? 'text-danger' : 'text-success' %>">$<%= txn.amount.toFixed(2) %></td>
+            <td><span class="badge <%= txn.status.includes('Pending') ? 'text-bg-warning' : 'text-bg-success' %>"><%= txn.status %></span></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<%- include('layouts/footer') %>
