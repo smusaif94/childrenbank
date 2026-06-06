@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: children-bank
-          image: children-bank:latest
+          image: smusaif94/children-bank:v1
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 3000
